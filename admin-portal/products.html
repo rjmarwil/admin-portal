@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Admin Portal</title>
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/handlebars/handlebars.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="app.css">
+
+  </head>
+  <body>
+
+    <script id="products-template" type="text/x-handlebars-template">
+      <div class="products">
+        <h1>Products</h1>
+        <div class="body">
+        {{#each this}}
+        <div class="each-product">
+        <p class="product">
+        <em>Product: </em> <a href="product.html?id={{this.id}}">{{this.name}}</a>
+        </p>
+        <p>
+        <em>  Description: </em>{{this.description}}
+        </p>
+        <p>
+        <em>  Price: </em>{{this.price}}
+        </p>
+        </div>
+        {{/each}}
+        </div>
+      </div>
+    </script>
+    <script>productsRequest();
+    </script>
+  </body>
+</html>

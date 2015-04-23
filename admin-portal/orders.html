@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Orders Page</title>
+
+  <script type="text/javascript" src="bower_components/handlebars/handlebars.js"></script>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <link rel="stylesheet" type="text/css" href="app.css">
+
+</head>
+<body>
+  <script id="orders-template" type="text/x-handlebars-template">
+    <div class="orders">
+      <h1>Orders</h1>
+      <div class="body">
+        {{#each this}}
+        <div class="each-order">
+          <p>
+          <strong>Sub-total:</strong>  {{this.sub_total}}
+          </p>
+          <p>
+            <strong>  Tax:</strong> {{this.tax}}
+          </p>
+          <p>
+            <strong>  Total:</strong> {{this.total}}
+          </p>
+          <p>
+            <strong>  Shipping Address Id:</strong> {{this.shipping_address_id}}
+          </p>
+          <p>
+            <strong>  Status:</strong> {{this.status}}
+          </p>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </script>
+<script> ordersRequest();</script>
+</body>
+</html>
